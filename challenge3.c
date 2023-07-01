@@ -25,11 +25,10 @@ int isprime(long x)
 int solve(long x)
 {
 	long sq = pow(x, 0.5);
-	long mi = 1;
-	for (long i = 3; i <= sq; ++i)
+	for (long i = sq; i >= 3; --i)
 	{
 		if (x % i) continue;
-		if (isprime(i)) mi = i;
+		if (isprime(i)) return i;
 	}
-	return mi;
+	return 1;
 }
